@@ -14,6 +14,21 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Open Sans`,
+            variants: [`300`, `400`,'800']
+          },
+          {
+            family: `Open Sans`,
+            subsets: [`latin`]
+          },
+        ],
+      },
+    },
     `gatsby-plugin-styled-components`,
   ],
 };
