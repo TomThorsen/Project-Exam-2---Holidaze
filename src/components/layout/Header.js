@@ -6,6 +6,21 @@ import Logo from "../img/logo_white.png"
 import StyledButton from "../assets/StyledButton"
 import { Link } from "gatsby"
 
+const StyledNavbar = styled(Navbar)`
+  background-color: #039CCC !important;
+  justify-content: center !important;
+  padding: 0;
+  box-shadow: 0px 1px 5px black;
+      @media (max-width: 992px) {
+      flex-direction: column !important;
+  }
+  @media (max-width: 992px) {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+  }
+`
+
 const StyledNav = styled(Nav)`
   margin: 0;
   padding: 0;
@@ -35,16 +50,7 @@ const StyledButtonDiv = styled.div`
       margin-bottom: 20px;
   }
 `
-const StyledNavbar = styled(Navbar)`
-  background-color: #039CCC !important;
-  padding-bottom: 0px !important;
-  justify-content: center !important;
-  margin: 0;
-  padding: 0;
-      @media (max-width: 992px) {
-      flex-direction: column !important;
-  }
-`
+
 const StyledLink = styled(Link)`
   color: white !important;
   font-size: 30px;
@@ -90,26 +96,28 @@ const StyledCollapse = styled(Navbar.Collapse)`
     }
 `
 
+
 export default () => (
-  <StyledNavbar expand="lg">
-    <StyledContainer>
-      <StyledDiv>
-        <StyledNavbar.Brand href="#home"><StyledImg src={Logo} alt='website logo' /></StyledNavbar.Brand>
-        <StyledToogle aria-controls="basic-navbar-nav" />
-        <StyledCollapse id="basic-navbar-nav">
-            <StyledNav>
-              <StyledLink to="/">HOME</StyledLink>
-              <StyledLink to="/hotels/">HOTELS</StyledLink>
-              <StyledLink to="/contact/">CONTACT</StyledLink>
-              <StyledLink to="/about/">ABOUT</StyledLink>
-            </StyledNav>
-          <StyledButtonDiv>
-            <StyledButton text="REGISTER" page="/about/"/>
-            <StyledButton text="LOG IN" page="/hotels/"/>
-          </StyledButtonDiv>
-        </StyledCollapse>
-      </StyledDiv>
-    </StyledContainer>
-  </StyledNavbar>
+
+    <StyledNavbar expand="lg">
+      <StyledContainer>
+        <StyledDiv>
+          <StyledNavbar.Brand href="#home"><StyledImg src={Logo} alt='website logo' /></StyledNavbar.Brand>
+          <StyledToogle aria-controls="basic-navbar-nav" />
+          <StyledCollapse id="basic-navbar-nav">
+              <StyledNav>
+                <StyledLink to="/">HOME</StyledLink>
+                <StyledLink to="/hotels/">HOTELS</StyledLink>
+                <StyledLink to="/contact/">CONTACT</StyledLink>
+                <StyledLink to="/about/">ABOUT</StyledLink>
+              </StyledNav>
+            <StyledButtonDiv>
+              <StyledButton text="REGISTER" page="/about/"/>
+              <StyledButton text="LOG IN" page="/hotels/"/>
+            </StyledButtonDiv>
+          </StyledCollapse>
+        </StyledDiv>
+      </StyledContainer>
+    </StyledNavbar>
 
 )
