@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="909ea9bb-803a-450f-827d-4a3a14f93a22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/layout/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/assets/StyledButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/assets/StyledButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/hotels.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/hotels.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -20,7 +19,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gatsby-config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
@@ -32,8 +31,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="39" selection-start-line="39" selection-end-line="46" selection-end-column="1" />
+            <state relative-caret-position="459">
+              <caret line="60" selection-start-line="60" selection-end-line="62" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/hotels.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="120" column="12" lean-forward="true" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -45,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/src/components/assets/StyledSearch.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -56,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/layout/Header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" selection-start-line="16" selection-end-line="20" selection-end-column="3" />
+            <state relative-caret-position="971">
+              <caret line="113" column="29" lean-forward="true" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -80,8 +91,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/assets/StyledButton.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="38" />
+            <state relative-caret-position="255">
+              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -95,7 +109,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/layout/Layout.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
@@ -128,17 +142,17 @@
         <option value="$PROJECT_DIR$/src/components/Header.js" />
         <option value="$PROJECT_DIR$/gatsby-config.js" />
         <option value="$PROJECT_DIR$/src/components/assets/Button.js" />
-        <option value="$PROJECT_DIR$/src/pages/hotels.js" />
         <option value="$PROJECT_DIR$/src/pages/contact.js" />
         <option value="$PROJECT_DIR$/src/pages/about.js" />
-        <option value="$PROJECT_DIR$/src/components/assets/StyledButton.js" />
         <option value="$PROJECT_DIR$/src/components/assets/SearchBar.js" />
         <option value="$PROJECT_DIR$/src/components/layout/test.css" />
-        <option value="$PROJECT_DIR$/src/pages/index.js" />
         <option value="$PROJECT_DIR$/src/components/layout/Layout.js" />
         <option value="$PROJECT_DIR$/src/components/layout/Footer.js" />
-        <option value="$PROJECT_DIR$/src/components/layout/Header.js" />
         <option value="$PROJECT_DIR$/src/components/assets/StyledSearch.js" />
+        <option value="$PROJECT_DIR$/src/pages/index.js" />
+        <option value="$PROJECT_DIR$/src/components/assets/StyledButton.js" />
+        <option value="$PROJECT_DIR$/src/components/layout/Header.js" />
+        <option value="$PROJECT_DIR$/src/pages/hotels.js" />
       </list>
     </option>
   </component>
@@ -232,16 +246,17 @@
       <workItem from="1581252865170" duration="6494000" />
       <workItem from="1581429881175" duration="6635000" />
       <workItem from="1581686563780" duration="9441000" />
+      <workItem from="1581856949682" duration="5997000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33184000" />
+    <option name="totallyTimeSpent" value="39181000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="2574" height="1407" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -287,33 +302,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/hotels.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../TomThorsen-noroff-react-2/components/layout/Layout.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/../TomThorsen-noroff-react-2/pages/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/gatsby-config.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/hotels.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        <state relative-caret-position="413">
+          <caret line="120" column="12" lean-forward="true" selection-start-line="120" selection-start-column="12" selection-end-line="120" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="39" selection-start-line="39" selection-end-line="46" selection-end-column="1" />
+        <state relative-caret-position="459">
+          <caret line="60" selection-start-line="60" selection-end-line="62" selection-end-column="3" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -323,7 +331,7 @@
     <entry file="file://$PROJECT_DIR$/src/components/assets/StyledSearch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -332,8 +340,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/layout/Header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="20" selection-end-column="3" />
+        <state relative-caret-position="971">
+          <caret line="113" column="29" lean-forward="true" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
@@ -352,8 +360,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/assets/StyledButton.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="38" />
+        <state relative-caret-position="255">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -371,6 +382,13 @@
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gatsby-config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
         </state>
       </provider>
     </entry>

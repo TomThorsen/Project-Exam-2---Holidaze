@@ -94,7 +94,6 @@ const StyledImg = styled(Image)`
   filter: brightness(100%);
   }
   filter: brightness(90%);
-
 `
 const StyledImgText = styled.p`
   font-family: "Open sans", serif;
