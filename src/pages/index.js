@@ -2,7 +2,8 @@ import React from "react"
 import Layout from "../components/layout/Layout"
 import styled from "styled-components"
 import StyledSearch from "../components/assets/StyledSearch"
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col} from 'reactstrap'
+import Image from 'react-bootstrap/Image'
 import Banner from "../components/img/banner_1.png"
 import Logo from "../components//img/logo_white.png"
 import Hotel1 from "../components/img/hotel_1.png"
@@ -107,6 +108,9 @@ const StyledImgText = styled.p`
 const StyledImageLink = styled.a`
 
 `
+const StyledImgContainer = styled.div`
+  position: relative;
+`
 export default () => (
   <>
     <Layout>
@@ -123,44 +127,54 @@ export default () => (
           <StyledRow>
             <StyledColumn md={4} xs={6}>
               <StyledImageLink href="#home">
-                <StyledImg src={Hotel1} alt='Image of a hotel' fluid/>
-                <StyledImgText>
-                  HOTELNAME
-                </StyledImgText>
+                <StyledImgContainer>
+                  <StyledImg src={Hotel1} alt='Image of a hotel' fluid/>
+                  <StyledImgText>
+                    HOTELNAME
+                  </StyledImgText>
+                </StyledImgContainer>
               </StyledImageLink>
             </StyledColumn>
             <StyledColumn md={4} xs={6}>
               <StyledImageLink href="#home">
-                <StyledImg src={Hotel2} alt='Image of a hotel' fluid/>
-                <StyledImgText>
-                  HOTELNAME
-                </StyledImgText>
+                <StyledImgContainer>
+                  <StyledImg src={Hotel2} alt='Image of a hotel' fluid/>
+                  <StyledImgText>
+                    HOTELNAME
+                  </StyledImgText>
+                </StyledImgContainer>
               </StyledImageLink>
             </StyledColumn>
             <StyledColumn md={4} xs={12}>
               <StyledImageLink href="#home">
-                <StyledImg src={Hotel3} alt='Image of a hotel' fluid/>
-                <StyledImgText>
-                  HOTELNAME
-                </StyledImgText>
+                <StyledImgContainer>
+                  <StyledImg src={Hotel3} alt='Image of a hotel' fluid/>
+                  <StyledImgText>
+                    HOTELNAME
+                  </StyledImgText>
+                </StyledImgContainer>
               </StyledImageLink>
             </StyledColumn>
           </StyledRow>
           <StyledRow>
             <StyledColumn md={6} xs={12}>
               <StyledImageLink href="#home">
-                <StyledImg src={HotelWide1} alt='Image of a hotel' fluid/>
-                <StyledImgText>
-                  HOTELNAME
-                </StyledImgText>
+                <StyledImgContainer>
+                  <StyledImg src={HotelWide1} alt='Image of a hotel' fluid/>
+                  <StyledImgText>
+                    HOTELNAME
+                  </StyledImgText>
+                </StyledImgContainer>
               </StyledImageLink>
             </StyledColumn>
             <StyledColumn md={6} xs={12}>
               <StyledImageLink href="#home">
-                <StyledImg src={HotelWide2} alt='Image of a hotel' fluid/>
-                <StyledImgText>
-                  HOTELNAME
-                </StyledImgText>
+                <StyledImgContainer>
+                  <StyledImg src={HotelWide2} alt='Image of a hotel' fluid/>
+                  <StyledImgText>
+                    HOTELNAME
+                  </StyledImgText>
+                </StyledImgContainer>
               </StyledImageLink>
             </StyledColumn>
           </StyledRow>

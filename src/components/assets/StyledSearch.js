@@ -13,7 +13,6 @@ const StyledSearchContainer = styled.div`
       width: 100% !important;
       padding-top: 84px;
   }
-
 `
 const StyledSearch = styled.input`
   width: 700px;

@@ -2,10 +2,10 @@ import React from "react"
 import Layout from "../components/layout/Layout"
 import styled from "styled-components"
 import StyledSearch from "../components/assets/StyledSearch"
-import { Image } from 'react-bootstrap';
+import Image from 'react-bootstrap/Image'
 import HotelsImage from "../components/img/hotelpage_1.png"
 import Star from "../components/img/star.png"
-import StyledButton from "../components/assets/StyledButton"
+import HotelsEnquiry from "../components/layout/modal/HotelsEnquiry"
 
 const StyledContainer = styled.div`
   display: flex;
@@ -116,13 +116,7 @@ const StyledImgStars = styled(Image)`
     height: 16px;
   }
 `
-const StyledButtonCont = styled.div`
-  position:absolute;
-  bottom: 0;
-  right: 0;
-  margin: 0;
-  padding: 0;
-`
+
 export default () => (
   <>
     <Layout>
@@ -150,9 +144,9 @@ export default () => (
             <StyledHotelRating>
               Guest Rating
             </StyledHotelRating>
-            <StyledButtonCont>
-              <StyledButton inverted text="SEND ENQUIRY" page="/hotels/"/>
-            </StyledButtonCont>
+            <HotelsEnquiry>
+            </HotelsEnquiry>
+
           </StyledHotelInfoContainer>
         </StyledHotelContainer>
       </StyledContainer>

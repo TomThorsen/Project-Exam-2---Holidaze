@@ -98,7 +98,6 @@ const StyledCollapse = styled(Navbar.Collapse)`
 
 
 export default () => (
-
     <StyledNavbar expand="lg">
       <StyledContainer>
         <StyledDiv>
