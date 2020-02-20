@@ -125,7 +125,7 @@ export default () => (
         </StyledTextContainer>
         <StyledContainer>
           <StyledRow>
-            <StyledColumn md={4} xs={6}>
+            <StyledColumn md={4} xs={12}>
               <StyledImageLink href="#home">
                 <StyledImgContainer>
                   <StyledImg src={Hotel1} alt='Image of a hotel' fluid/>
@@ -135,7 +135,7 @@ export default () => (
                 </StyledImgContainer>
               </StyledImageLink>
             </StyledColumn>
-            <StyledColumn md={4} xs={6}>
+            <StyledColumn md={4} xs={12}>
               <StyledImageLink href="#home">
                 <StyledImgContainer>
                   <StyledImg src={Hotel2} alt='Image of a hotel' fluid/>

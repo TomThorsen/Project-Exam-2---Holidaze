@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalFooter, Container, Row, Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Modal, ModalFooter, Container, Row, Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import styled from "styled-components"
 
 const StyledContainer = styled.div`
@@ -86,7 +86,7 @@ const StyledInput = styled(Input)`
   }
 `
 const StyledTextInput = styled(StyledInput)`
-  min-height: 200px;
+  min-height: 160px;
 `
 const StyledForm = styled(Form)`
 margin-top: 30px;
