@@ -4,7 +4,6 @@ import styled from "styled-components"
 import Logo from "../img/logo_white.png"
 import { Link } from "gatsby"
 
-
 const StyledFooter = styled.div`
   height: 112px;
   flex-shrink: 0;
@@ -22,18 +21,15 @@ const StyledLogo = styled.img`
   margin: 0;
   padding: 0;
   padding-bottom: 10px;
-  @media (max-width: 767px) {
-
-  }
 `
 const StyledLink = styled(Link)`
-  color: white !important;
+  color: white;
   font-size: 30px;
   font-family: "Open sans", serif;
   margin-top: -32px;
   padding-left: 30px;
   padding-right: 30px;
-    &:hover {
+  &:hover {
     color: #FEC406 !important;
     text-decoration: none !important;
   }
@@ -56,21 +52,18 @@ const StyledCopyrightText = styled.p`
   font-size: 14px;
 `
 export default () => (
-
   <StyledFooter>
     <StyledFooterContent>
-      <StyledLink to="/">HOME</StyledLink>
-      <StyledLink to="/hotels/">HOTELS</StyledLink>
+      <StyledLink to="/" activeStyle={{ color: "#FEC406" }}>HOME</StyledLink>
+      <StyledLink to="/hotels/" activeStyle={{ color: "#FEC406" }}>HOTELS</StyledLink>
       <StyledLogoContainer>
         <StyledLogo src={Logo} alt='website logo' />
         <StyledCopyrightText>
           ©2019 Holidaze Inc
         </StyledCopyrightText>
       </StyledLogoContainer>
-
-      <StyledLink to="/contact/">CONTACT</StyledLink>
-      <StyledLink to="/about/">ABOUT</StyledLink>
+      <StyledLink to="/contact/" activeStyle={{ color: "#FEC406" }}>CONTACT</StyledLink>
+      <StyledLink to="/about/" activeStyle={{ color: "#FEC406" }}>ABOUT</StyledLink>
     </StyledFooterContent>
   </StyledFooter>
-
 )

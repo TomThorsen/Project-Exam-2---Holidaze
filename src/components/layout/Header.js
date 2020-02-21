@@ -52,13 +52,13 @@ const StyledButtonDiv = styled.div`
 `
 
 const StyledLink = styled(Link)`
-  color: white !important;
+  color: white;
   font-size: 30px;
   font-family: "Open sans", serif;
   margin: 0;
   padding: 0 !important;
   padding-right: 50px !important;
-    &:hover {
+  &:hover {
     color: #FEC406 !important;
     text-decoration: none !important;
   }
@@ -76,8 +76,8 @@ const StyledImg = styled.img`
   @media (max-width: 992px) {
    margin-left: 20px;
   }
-    @media (max-width: 310px) {
-  height: 20px;
+  @media (max-width: 310px) {
+    height: 20px;
   }
 `
 const StyledToogle = styled(Navbar.Toggle)`
@@ -105,14 +105,14 @@ export default () => (
           <StyledToogle aria-controls="basic-navbar-nav" />
           <StyledCollapse id="basic-navbar-nav">
               <StyledNav>
-                <StyledLink to="/">HOME</StyledLink>
-                <StyledLink to="/hotels/">HOTELS</StyledLink>
-                <StyledLink to="/contact/">CONTACT</StyledLink>
-                <StyledLink to="/about/">ABOUT</StyledLink>
+                <StyledLink to="/" activeStyle={{ color: "#FEC406" }}>HOME</StyledLink>
+                <StyledLink to="/hotels/" activeStyle={{ color: "#FEC406" }}>HOTELS</StyledLink>
+                <StyledLink to="/contact/" activeStyle={{ color: "#FEC406" }}>CONTACT</StyledLink>
+                <StyledLink to="/about/" activeStyle={{ color: "#FEC406" }}>ABOUT</StyledLink>
               </StyledNav>
             <StyledButtonDiv>
               <StyledButton text="REGISTER" page="/about/"/>
-              <StyledButton text="LOG IN" page="/hotels/"/>
+              <StyledButton text="LOG IN" page="/login/"/>
             </StyledButtonDiv>
           </StyledCollapse>
         </StyledDiv>

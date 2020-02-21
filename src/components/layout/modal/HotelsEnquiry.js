@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, ModalFooter, Container, Row, Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Modal, ModalFooter, Container, Row, Col, Form, FormGroup, Label, Input } from 'reactstrap';
 import styled from "styled-components"
 
 const StyledContainer = styled.div`

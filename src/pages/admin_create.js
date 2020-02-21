@@ -1,10 +1,8 @@
 import React from "react"
 import Layout from "../components/layout/Layout"
+import AdminMenu from "../components/layout/AdminMenu"
 import styled from "styled-components"
-import StyledSearch from "../components/assets/StyledSearch"
-import { Row, Col, Input, Form, FormGroup } from "reactstrap"
-import Logo from "../components//img/logo_white.png"
-
+import { Row, Col, Input, Form, FormGroup, Label } from "reactstrap"
 
 const StyledDiv = styled.div`
   display: flex;
@@ -17,6 +15,7 @@ const StyledDiv = styled.div`
   @media (max-width: 992px) {
       width: 100%;
   }
+  font-family: "Open sans", serif;
 `
 const StyledHeader = styled.h1`
   font-family: "Open sans", serif;
@@ -32,17 +31,15 @@ const StyledInput = styled(Input)`
   border-color: #FEC406;
   border-width: 3px;
   color: #707070;
-  margin-top: 10px;
   &::-webkit-input-placeholder {
     color: #707070;
   }
 `
-const StyledTextInput = styled(StyledInput)`
-  min-height: 150px;
-`
+
 const StyledForm = styled(Form)`
   width: 710px;
   position: relative;
+  margin-top: 20px;
   padding-bottom: 70px;
     @media (max-width: 992px) {
       width: 100%;
@@ -50,12 +47,13 @@ const StyledForm = styled(Form)`
       padding-right: 10px;
   }
 `
+const StyledLabel = styled(Label)`
+  color: white;
+`
 const StyledFormGroup = styled(FormGroup)`
-  margin:0;
-  margin-bottom: 0px;
+
 `
 const StyledButton = styled.button`
-  font-family: "Open sans", serif;
   box-shadow: 1px 1px 2px black;
   background-color: #64B362;
   border: solid;
@@ -82,103 +80,76 @@ const StyledButton = styled.button`
     margin-right: 10px;
   }
 `
-const StyledTextDiv = styled.div`
-  display: flex;
-  width: 1024px;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  flex-direction: column;
-  @media (max-width: 992px) {
-      width: 100%;
-  }
-`
-const StyledTextContainer = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #039CCC;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-`
-const StyledLogo = styled.img`
-  width: 280px;
-  height: auto;
-  padding-top: 20px;
-  @media (max-width: 767px) {
-    width: 180px;
-  }
-`
-const StyledParagraph = styled.p`
-  font-family: "Open sans", serif;
-  color: white;
-  text-align: center;
-  font-size: 18px;
-  width: 780px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  @media (max-width: 992px) {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  @media (max-width: 767px) {
-    font-size: 14px;
-  }
+const StyledTextInput = styled(StyledInput)`
+  min-height: 150px;
 `
 export default () => (
   <>
     <Layout>
-      <StyledSearch/>
+      <AdminMenu/>
       <StyledDiv>
-        <StyledHeader>CONTACT US</StyledHeader>
+        <StyledHeader>CREATE NEW ESTABLISHMENT</StyledHeader>
         <StyledForm>
           <Row>
             <Col xs="12" sm="6">
               <StyledFormGroup>
-                <StyledInput type="text" name="firstName" id="firstName" placeholder="FIRST NAME" />
+                <StyledLabel for="hotelName">Hotel Name</StyledLabel>
+                <StyledInput type="text" name="hotelName" id="hotelName" placeholder="HOTEL NAME" />
               </StyledFormGroup>
             </Col>
             <Col xs="12" sm="6">
               <StyledFormGroup>
-                <StyledInput type="text" name="lastName" id="lastName" placeholder="LAST NAME" />
+                <StyledLabel for="hotelStars">Stars</StyledLabel>
+                <StyledInput type="select" name="hotelStars" id="hotelStars">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                </StyledInput>
               </StyledFormGroup>
             </Col>
           </Row>
           <Row>
             <Col xs="12" sm="6">
               <StyledFormGroup>
-                <StyledInput type="email" name="emailAddress" id="emailAddress" placeholder="EMAIL" />
+                <StyledLabel for="hotelAddress">Address</StyledLabel>
+                <StyledInput type="text" name="hotelAddress" id="hotelAddress" placeholder="ADDRESS" />
               </StyledFormGroup>
             </Col>
             <Col xs="12" sm="6">
               <StyledFormGroup>
-                <StyledInput type="number" name="phoneNumber" id="phoneNumber" placeholder="PHONE NUMBER" />
+                <StyledLabel for="hotelPostalNumber">Post Number</StyledLabel>
+                <StyledInput type="number" name="hotelPostalNumber" id="hotelPostalNumber" placeholder="POST NUMBER" />
               </StyledFormGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="12" sm="6">
+              <StyledFormGroup>
+                <StyledLabel for="hotelImgUrl">Image URL</StyledLabel>
+                <StyledInput type="text" name="hotelImgUrl" id="hotelImgUrl" placeholder="Image URL" />
+              </StyledFormGroup>
+            </Col>
+            <Col xs="12" sm="6">
+              <FormGroup>
+                <StyledLabel for="hotelGuestRating">Guest Rating</StyledLabel>
+                <StyledInput type="number" min="0" max="100" id="hotelGuestRating" name="hotelGuestRating" placeholder="0-100" />
+              </FormGroup>
             </Col>
           </Row>
           <Row>
             <Col xs="12" sm="12">
               <StyledFormGroup>
-                <StyledTextInput type="textarea" name="textMessage" id="textMessage" placeholder="Write your message here..." />
+                <StyledLabel for="hotelDescription">Description</StyledLabel>
+                <StyledTextInput type="textarea" name="hotelDescription" id="hotelDescription" placeholder="Write your description here..." />
               </StyledFormGroup>
             </Col>
           </Row>
-          <StyledButton>SUBMIT</StyledButton>
+          <StyledButton>CREATE</StyledButton>
         </StyledForm>
       </StyledDiv>
-      <StyledTextDiv>
-        <StyledTextContainer>
-          <StyledLogo src={Logo} alt='website logo' />
-          <StyledParagraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat sit amet lacus eget commodo. Cras est nibh, vehicula nec vehicula quis, rutrum eget enim.
-          </StyledParagraph>
-        </StyledTextContainer>
-      </StyledTextDiv>
     </Layout>
   </>
 )
