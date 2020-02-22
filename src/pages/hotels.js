@@ -146,7 +146,6 @@ export default () => (
             </StyledHotelRating>
             <HotelsEnquiry>
             </HotelsEnquiry>
-
           </StyledHotelInfoContainer>
         </StyledHotelContainer>
       </StyledContainer>
