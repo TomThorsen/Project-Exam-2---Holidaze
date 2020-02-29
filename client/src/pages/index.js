@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout/Layout"
 import styled from "styled-components"
 import StyledSearch from "../components/assets/StyledSearch"
-import GoogleMapsModal from "../components/assets/GoogleMapsModal"
 import { Container, Row, Col } from "reactstrap"
 import Image from "react-bootstrap/Image"
 import Banner from "../components/img/banner_1.png"
@@ -131,7 +130,12 @@ export default class Index extends React.Component {
           <StyledDiv>
             <StyledBanner src={Banner} alt="Image of Bergen harbor" fluid />
             <StyledTextContainer>
-<GoogleMapsModal/>
+              <StyledLogo src={Logo} alt="website logo" />
+              <StyledParagraph>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                volutpat sit amet lacus eget commodo. Cras est nibh, vehicula
+                nec vehicula quis, rutrum eget enim.
+              </StyledParagraph>
             </StyledTextContainer>
             <StyledContainer>
               <StyledRow>

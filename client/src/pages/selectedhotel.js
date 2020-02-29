@@ -4,6 +4,7 @@ import Image from "react-bootstrap/Image"
 import HotelsModal from "../components/assets/HotelsModal"
 import Layout from "../components/layout/Layout"
 import StyledSearch from "../components/assets/StyledSearch"
+import HotelsMapModal from "../components/assets/GoogleMapsModal"
 
 const StyledHotelContainer = styled.div`
   display: flex;
@@ -135,6 +136,9 @@ const StyledOpenModalButton = styled(StyledButton)`
   bottom: 0px;
   right: 0px;
 `
+const StyledOpenMapModalButton = styled(StyledOpenModalButton)`
+  right: 150px;
+`
 const StyledContainer = styled.div`
   display: flex;
   width: 1024px;
@@ -152,63 +156,91 @@ export default class SelectedHotel extends React.Component {
     super(props)
     this.state = {}
   }
+  handleMapClick(selectedHotel) {
+    this._mapModal.toggle(selectedHotel)
+    console.log(selectedHotel)
+  }
   handleClick(selectedHotel) {
     this._modal.toggle(selectedHotel)
   }
 
   render() {
-      const starImage = [
-        [],
-        [require("../components/img/1_Star.png")],
-        [require("../components/img/2_Star.png")],
-        [require("../components/img/3_Star.png")],
-        [require("../components/img/4_Star.png")],
-        [require("../components/img/5_Star.png")],
-        [require("../components/img/6_Star.png")],
-      ]
-      let selectedHotel = this.props.location.state.selectedHotel;
-      return (
-        <>
-          <Layout>
-            <StyledSearch />
-            <StyledContainer>
-              <HotelsModal
-                ref={HotelsModal => {
-                  this._modal = HotelsModal
-                }}
+    if (this.props.location.state) {
+    const starImage = [
+      [],
+      [require("../components/img/1_Star.png")],
+      [require("../components/img/2_Star.png")],
+      [require("../components/img/3_Star.png")],
+      [require("../components/img/4_Star.png")],
+      [require("../components/img/5_Star.png")],
+      [require("../components/img/6_Star.png")],
+    ]
+    let selectedHotel = this.props.location.state.selectedHotel
+    return (
+      <>
+        <Layout>
+          <StyledSearch />
+          <StyledContainer>
+            <HotelsModal
+              ref={HotelsModal => {
+                this._modal = HotelsModal
+              }}
+            />
+            <HotelsMapModal
+              ref={HotelsMapModal => {
+                this._mapModal = HotelsMapModal
+              }}
+            />
+
+            <StyledHotelContainer>
+              <StyledImg
+                src={this.props.location.state.selectedHotel.hotelImgUrl}
+                alt="Image of a hotel"
+                fluid
               />
-              <StyledHotelContainer>
-                <StyledImg
-                  src={this.props.location.state.selectedHotel.hotelImgUrl}
-                  alt="Image of a hotel"
-                  fluid
-                />
-                <StyledHotelInfoContainer>
-                  <StyledHotelHeader>{this.props.location.state.selectedHotel.hotelName}</StyledHotelHeader>
-                  <StyledHotelLocation>${this.props.location.state.selectedHotel.price}</StyledHotelLocation>
-                  <StyledHotelStarContainer>
-                    <StyledImgStars
-                      src={starImage[this.props.location.state.selectedHotel.hotelStars]}
-                      alt="Hotel Stars"
-                      fluid
-                    />
-                  </StyledHotelStarContainer>
-                  <StyledHotelParagraph>
-                      {this.props.location.state.selectedHotel.hotelDescription}
-                  </StyledHotelParagraph>
-                  <StyledHotelRating>
-                    Self Catering: {this.props.location.state.selectedHotel.selfCatering}
-                  </StyledHotelRating>
-                  <StyledOpenModalButton
-                    onClick={this.handleClick.bind(this,selectedHotel)}
-                  >
-                    Send Enquiry
-                  </StyledOpenModalButton>
-                </StyledHotelInfoContainer>
-              </StyledHotelContainer>
-            </StyledContainer>
-          </Layout>
-        </>
-      )
-    }
+              <StyledHotelInfoContainer>
+                <StyledHotelHeader>
+                  {this.props.location.state.selectedHotel.hotelName}
+                </StyledHotelHeader>
+                <StyledHotelLocation>
+                  ${this.props.location.state.selectedHotel.price}
+                </StyledHotelLocation>
+                <StyledHotelStarContainer>
+                  <StyledImgStars
+                    src={
+                      starImage[
+                        this.props.location.state.selectedHotel.hotelStars
+                      ]
+                    }
+                    alt="Hotel Stars"
+                    fluid
+                  />
+                </StyledHotelStarContainer>
+                <StyledHotelParagraph>
+                  {this.props.location.state.selectedHotel.hotelDescription}
+                </StyledHotelParagraph>
+                <StyledHotelRating>
+                  Self Catering:{" "}
+                  {this.props.location.state.selectedHotel.selfCatering}
+                </StyledHotelRating>
+                <StyledOpenMapModalButton
+                  onClick={this.handleMapClick.bind(this, selectedHotel)}
+                >
+                  Map
+                </StyledOpenMapModalButton>
+                <StyledOpenModalButton
+                  onClick={this.handleClick.bind(this, selectedHotel)}
+                >
+                  Send Enquiry
+                </StyledOpenModalButton>
+              </StyledHotelInfoContainer>
+            </StyledHotelContainer>
+          </StyledContainer>
+        </Layout>
+      </>
+    )
+  }
+    return `null`
+  }
+
 }

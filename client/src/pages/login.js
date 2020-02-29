@@ -117,7 +117,7 @@ export default class Login extends React.Component {
         values.password === result[0].password
       ) {
         if (result[0].isAdmin === "YES") {
-          sessionStorage.setItem('adminLoggedin', 'true');
+          sessionStorage.setItem("adminLoggedin", "true")
           navigate("/admin_enquiries/")
         } else {
           $("#customFeedback").html("User does not have admin access")

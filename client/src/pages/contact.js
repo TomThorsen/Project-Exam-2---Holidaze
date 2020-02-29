@@ -1,22 +1,28 @@
 import React from "react"
 import Layout from "../components/layout/Layout"
 import styled from "styled-components"
-import $ from 'jquery'
+import $ from "jquery"
 import StyledSearch from "../components/assets/StyledSearch"
-import { Row, Col, Input, Form, FormGroup } from "reactstrap"
+import { Row, Col } from "reactstrap"
 import Logo from "../components//img/logo_white.png"
 import { navigate } from "gatsby"
+import {
+  AvForm,
+  AvGroup,
+  AvInput,
+  AvFeedback,
+} from "availity-reactstrap-validation"
 
 const StyledDiv = styled.div`
   display: flex;
   width: 1024px;
   justify-content: center;
-  background-color: #4C91B7;
+  background-color: #4c91b7;
   align-items: center;
   margin: 0 auto;
   flex-direction: column;
   @media (max-width: 992px) {
-      width: 100%;
+    width: 100%;
   }
 `
 const StyledHeader = styled.h1`
@@ -27,10 +33,10 @@ const StyledHeader = styled.h1`
     font-size: 28px;
   }
 `
-const StyledInput = styled(Input)`
+const StyledInput = styled(AvInput)`
   font-family: "Open sans", serif;
   border-style: solid;
-  border-color: #FEC406;
+  border-color: #fec406;
   border-width: 3px;
   color: #707070;
   margin-top: 10px;
@@ -41,27 +47,27 @@ const StyledInput = styled(Input)`
 const StyledTextInput = styled(StyledInput)`
   min-height: 150px;
 `
-const StyledForm = styled(Form)`
+const StyledForm = styled(AvForm)`
   width: 710px;
   position: relative;
   padding-bottom: 70px;
-    @media (max-width: 992px) {
-      width: 100%;
-      padding-left: 10px;
-      padding-right: 10px;
+  @media (max-width: 992px) {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 `
-const StyledFormGroup = styled(FormGroup)`
-  margin:0;
+const StyledFormGroup = styled(AvGroup)`
+  margin: 0;
   margin-bottom: 0px;
 `
 const StyledButton = styled.button`
   font-family: "Open sans", serif;
   box-shadow: 1px 1px 2px black;
-  background-color: #64B362;
+  background-color: #64b362;
   border: solid;
   border-width: 2px;
-  border-color: #FEC406;
+  border-color: #fec406;
   border-radius: 3px;
   color: white;
   padding: 0px 15px;
@@ -74,7 +80,7 @@ const StyledButton = styled.button`
   bottom: 0;
   cursor: pointer;
   &:hover {
-    background-color: #36B2A6;
+    background-color: #36b2a6;
     text-decoration: none;
     color: white;
     box-shadow: 0px 0px black;
@@ -91,7 +97,7 @@ const StyledTextDiv = styled.div`
   margin: 0 auto;
   flex-direction: column;
   @media (max-width: 992px) {
-      width: 100%;
+    width: 100%;
   }
 `
 const StyledTextContainer = styled.div`
@@ -99,7 +105,7 @@ const StyledTextContainer = styled.div`
   width: 100%;
   justify-content: center;
   flex-direction: column;
-  background-color: #039CCC;
+  background-color: #039ccc;
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -131,72 +137,144 @@ const StyledParagraph = styled.p`
     font-size: 14px;
   }
 `
-const contactForm = () => {
+const StyledFeedback = styled(AvFeedback)`
+  color: white;
+  font-family: "Open sans", serif;
+`
 
-  $(function () {
-    $('#formupload').on('submit', function (e) {
-      e.preventDefault();
-      $.ajax({
-        type: 'post',
-        url: 'http://localhost/hotel-api/server/contact-success.php',
-        data: $('form').serialize(),
-        success: function () {
-          navigate("/contact_success/")
-        }
-      });
-    });
-  });
-  return (
+export default class contactForm extends React.Component {
+  constructor() {
+    super()
+    this.handleValidSubmit = this.handleValidSubmit.bind(this)
+    this.state = {}
+  }
+
+  handleValidSubmit(event, values) {
+    this.setState({ values })
+    $.ajax({
+      type: "post",
+      url: "http://localhost/hotel-api/server/contact-success.php",
+      data: $("form").serialize(),
+      success: function() {
+        navigate("/contact_success/")
+      },
+    })
+  }
+
+  render() {
+    return (
       <>
         <Layout>
-          <StyledSearch/>
+          <StyledSearch />
           <StyledDiv>
             <StyledHeader>CONTACT US</StyledHeader>
-            <StyledForm id="formupload">
+            <StyledForm onValidSubmit={this.handleValidSubmit}>
               <Row>
                 <Col xs="12" sm="6">
                   <StyledFormGroup>
-                    <StyledInput type="text" name="firstName" id="firstName" placeholder="FIRST NAME" />
+                    <StyledInput
+                      type="text"
+                      name="firstName"
+                      id="firstName"
+                      placeholder="FIRST NAME"
+                      validate={{
+                        required: { value: true },
+                        pattern: { value: "^[A-Za-z0-9]+$" },
+                      }}
+                    />
+                    <StyledFeedback>
+                      First name required, no special characters allowed
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
                 <Col xs="12" sm="6">
                   <StyledFormGroup>
-                    <StyledInput type="text" name="lastName" id="lastName" placeholder="LAST NAME" />
+                    <StyledInput
+                      type="text"
+                      name="lastName"
+                      id="lastName"
+                      placeholder="LAST NAME"
+                      validate={{
+                        required: { value: true },
+                        pattern: { value: "^[A-Za-z0-9]+$" },
+                      }}
+                    />
+                    <StyledFeedback>
+                      Last name required, no special characters allowed
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
               </Row>
               <Row>
                 <Col xs="12" sm="6">
                   <StyledFormGroup>
-                    <StyledInput type="email" name="emailAddress" id="emailAddress" placeholder="EMAIL" />
+                    <StyledInput
+                      type="email"
+                      name="emailAddress"
+                      id="emailAddress"
+                      placeholder="EMAIL"
+                      validate={{
+                        required: true,
+                        email: true,
+                      }}
+                    />
+                    <StyledFeedback>
+                      Email required, format mail@domain.com
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
                 <Col xs="12" sm="6">
                   <StyledFormGroup>
-                    <StyledInput type="number" name="phoneNumber" id="phoneNumber" placeholder="PHONE NUMBER" />
+                    <StyledInput
+                      type="number"
+                      name="phoneNumber"
+                      id="phoneNumber"
+                      placeholder="PHONE NUMBER"
+                      validate={{
+                        required: true,
+                        number: true,
+                        minLength: { value: 8 },
+                        maxLength: { value: 8 },
+                      }}
+                    />
+                    <StyledFeedback>
+                      Phonenumber required, format 23232323
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
               </Row>
               <Row>
                 <Col xs="12" sm="12">
                   <StyledFormGroup>
-                    <StyledTextInput type="textarea" name="textMessage" id="textMessage" placeholder="Write your message here..." />
+                    <StyledTextInput
+                      type="textarea"
+                      name="textMessage"
+                      id="textMessage"
+                      placeholder="Write your message here..."
+                      validate={{
+                        required: true,
+                        minLength: { value: 10 },
+                      }}
+                    />
+                    <StyledFeedback>Message required</StyledFeedback>
                   </StyledFormGroup>
                 </Col>
               </Row>
-              <StyledButton type="submit">SUBMIT</StyledButton>
+              <StyledButton>SUBMIT</StyledButton>
             </StyledForm>
           </StyledDiv>
           <StyledTextDiv>
             <StyledTextContainer>
-              <StyledLogo src={Logo} alt='website logo' />
+              <StyledLogo src={Logo} alt="website logo" />
               <StyledParagraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean volutpat sit amet lacus eget commodo. Cras est nibh, vehicula nec vehicula quis, rutrum eget enim.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                volutpat sit amet lacus eget commodo. Cras est nibh, vehicula
+                nec vehicula quis, rutrum eget enim.
               </StyledParagraph>
             </StyledTextContainer>
           </StyledTextDiv>
         </Layout>
       </>
-  );
-};
-export default contactForm;
+    )
+  }
+}

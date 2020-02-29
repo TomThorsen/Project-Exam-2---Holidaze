@@ -19,15 +19,15 @@ const StyledContainer = styled.div`
 
 export default class Hotels extends React.Component {
   render() {
-      return (
-          <>
-            <Layout>
-              <StyledSearch />
-              <StyledContainer>
-                <HotelsFetcher/>
-              </StyledContainer>
-            </Layout>
-          </>
-      )
-    }
+    return (
+      <>
+        <Layout>
+          <StyledSearch />
+          <StyledContainer>
+            <HotelsFetcher />
+          </StyledContainer>
+        </Layout>
+      </>
+    )
   }
+}

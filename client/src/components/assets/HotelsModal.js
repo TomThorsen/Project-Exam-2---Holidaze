@@ -1,17 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import {
-  Col,
-  Container,
-  Form,
-  FormGroup,
-  Input,
-  Label,
-  Modal,
-  ModalFooter,
-  Row,
-} from "reactstrap"
+import { Col, Container, Label, Modal, ModalFooter, Row } from "reactstrap"
 import $ from "jquery"
+import {
+  AvForm,
+  AvGroup,
+  AvInput,
+  AvFeedback,
+} from "availity-reactstrap-validation"
 
 const StyledContainer = styled.div``
 const StyledButton = styled.button`
@@ -78,7 +74,7 @@ const StyledLabel = styled(Label)`
   color: white;
   font-family: "Open sans", serif;
 `
-const StyledInput = styled(Input)`
+const StyledInput = styled(AvInput)`
   font-family: "Open sans", serif;
   border-style: solid;
   border-color: #fec406;
@@ -91,17 +87,21 @@ const StyledInput = styled(Input)`
 const StyledTextInput = styled(StyledInput)`
   min-height: 160px;
 `
-const StyledForm = styled(Form)`
+const StyledForm = styled(AvForm)`
   margin-top: 30px;
 `
-const StyledFormGroup = styled(FormGroup)`
+const StyledFormGroup = styled(AvGroup)`
   margin: 0;
   margin-bottom: 5px;
 `
-
+const StyledFeedback = styled(AvFeedback)`
+  color: white;
+  font-family: "Open sans", serif;
+`
 export default class HotelsModal extends React.Component {
   constructor(props) {
     super(props)
+    this.handleValidSubmit = this.handleValidSubmit.bind(this)
     this.state = {
       modal: props.initialModalState,
       fade: true,
@@ -121,15 +121,16 @@ export default class HotelsModal extends React.Component {
       })
     }
   }
-  handleSubmit(e) {
-    e.preventDefault()
+  handleValidSubmit(event, values) {
+    this.setState({ values })
+    event.preventDefault()
     $.ajax({
       type: "post",
       url: "http://localhost/hotel-api/server/enquiry-success.php",
       data: $("form").serialize(),
       success: function() {
-        $("#modalHeader").html("BOOKING REQUEST SENT");
-        $("form input, form select, form label, form textarea,.hideThis").hide();
+        $("#modalHeader").html("BOOKING REQUEST SENT")
+        $("form input, form select, form label, form textarea,.hideThis").hide()
         $("#cancelButton").html("EXIT")
       },
     })
@@ -151,7 +152,7 @@ export default class HotelsModal extends React.Component {
             Hotel: {this.state.hotelName}
           </StyledModalHeader>
           <StyledModalBody>
-            <StyledForm id="entireForm" onSubmit={this.handleSubmit}>
+            <StyledForm onValidSubmit={this.handleValidSubmit}>
               <Row>
                 <StyledInput
                   type="hidden"
@@ -174,7 +175,18 @@ export default class HotelsModal extends React.Component {
                       name="fromDate"
                       id="fromDate"
                       placeholder="FROM DATE"
+                      validate={{
+                        required: true,
+                        dateRange: {
+                          start: { value: 0, units: "days" },
+                          end: { value: 2, units: "years" },
+                        },
+                      }}
                     />
+                    <StyledFeedback>
+                      You can't use a past date, and only up to 2 years in the
+                      future
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
                 <Col xs="12" sm="6">
@@ -184,8 +196,19 @@ export default class HotelsModal extends React.Component {
                       type="date"
                       name="toDate"
                       id="toDate"
-                      placeholder="password placeholder"
+                      placeholder="TO DATE"
+                      validate={{
+                        required: true,
+                        dateRange: {
+                          start: { value: 1, units: "days" },
+                          end: { value: 2, units: "years" },
+                        },
+                      }}
                     />
+                    <StyledFeedback>
+                      You can't use a past date, and only up to 2 years in the
+                      future
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
               </Row>
@@ -198,7 +221,6 @@ export default class HotelsModal extends React.Component {
                       name="adultGuests"
                       id="adultGuests"
                     >
-                      <option>0</option>
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -236,7 +258,14 @@ export default class HotelsModal extends React.Component {
                       name="firstName"
                       id="firstName"
                       placeholder="FIRST NAME"
+                      validate={{
+                        required: { value: true },
+                        pattern: { value: "^[A-Za-z0-9]+$" },
+                      }}
                     />
+                    <StyledFeedback>
+                      First name required, no special characters allowed
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
                 <Col xs="12" sm="6">
@@ -247,7 +276,14 @@ export default class HotelsModal extends React.Component {
                       name="lastName"
                       id="lastName"
                       placeholder="LAST NAME"
+                      validate={{
+                        required: { value: true },
+                        pattern: { value: "^[A-Za-z0-9]+$" },
+                      }}
                     />
+                    <StyledFeedback>
+                      Last name required, no special characters allowed
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
               </Row>
@@ -260,7 +296,14 @@ export default class HotelsModal extends React.Component {
                       name="emailAddress"
                       id="emailAddress"
                       placeholder="EMAIL"
+                      validate={{
+                        required: true,
+                        email: true,
+                      }}
                     />
+                    <StyledFeedback>
+                      Email required, format mail@domain.com
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
                 <Col xs="12" sm="6">
@@ -271,7 +314,16 @@ export default class HotelsModal extends React.Component {
                       name="phoneNumber"
                       id="phoneNumber"
                       placeholder="PHONE NUMBER"
+                      validate={{
+                        required: true,
+                        number: true,
+                        minLength: { value: 8 },
+                        maxLength: { value: 8 },
+                      }}
                     />
+                    <StyledFeedback>
+                      Phonenumber required, format 23232323
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
               </Row>
@@ -284,7 +336,14 @@ export default class HotelsModal extends React.Component {
                       name="homeAddress"
                       id="homeAddress"
                       placeholder="ADDRESS"
+                      validate={{
+                        required: { value: true },
+                        pattern: { value: "^[A-Za-z0-9 ]+$" },
+                      }}
                     />
+                    <StyledFeedback>
+                      Address required, no special characters allowed
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
                 <Col xs="12" sm="6">
@@ -295,7 +354,16 @@ export default class HotelsModal extends React.Component {
                       name="postNumber"
                       id="postNumber"
                       placeholder="POST NUMBER"
+                      validate={{
+                        required: true,
+                        number: true,
+                        minLength: { value: 4 },
+                        maxLength: { value: 4 },
+                      }}
                     />
+                    <StyledFeedback>
+                      Postnumber required, format 2323
+                    </StyledFeedback>
                   </StyledFormGroup>
                 </Col>
               </Row>
@@ -309,7 +377,12 @@ export default class HotelsModal extends React.Component {
                       name="textMessage"
                       id="textMessage"
                       placeholder="Write your message here..."
+                      validate={{
+                        required: true,
+                        minLength: { value: 10 },
+                      }}
                     />
+                    <StyledFeedback>Message required</StyledFeedback>
                   </StyledFormGroup>
                 </Col>
               </Row>

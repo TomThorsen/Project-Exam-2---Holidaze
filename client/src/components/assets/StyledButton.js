@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 const StyledButton = styled(Link)`
   font-family: "Open sans", serif;
-  background-color: ${props => props.inverted ? "#4C91B7" : "#039CCC"};
+  background-color: ${props => (props.inverted ? "#4C91B7" : "#039CCC")};
   border: solid;
   border-width: 2px;
   border-color: white;
@@ -19,7 +19,7 @@ const StyledButton = styled(Link)`
   margin-top: 15px;
   cursor: pointer;
   &:hover {
-    background-color: ${props => props.inverted ? '#039CCC' : '#4C91B7'};
+    background-color: ${props => (props.inverted ? "#039CCC" : "#4C91B7")};
     text-decoration: none !important;
     color: white;
     box-shadow: 0px 0px black;
@@ -29,7 +29,7 @@ const StyledButton = styled(Link)`
   }
 `
 
-function ButtonRender (props) {
+function ButtonRender(props) {
   if (props.inverted) {
     return (
       <StyledButton inverted to={props.page}>
@@ -37,11 +37,7 @@ function ButtonRender (props) {
       </StyledButton>
     )
   } else {
-    return (
-      <StyledButton to={props.page}>
-        {props.text}
-      </StyledButton>
-    )
+    return <StyledButton to={props.page}>{props.text}</StyledButton>
   }
 }
 

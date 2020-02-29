@@ -5,6 +5,11 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: `Holidaze`,
+    siteUrl: `https://www.sleekdesign.no`,
+    description: `Holidaze - For your hotel needs`,
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-material-ui`,
@@ -20,15 +25,20 @@ module.exports = {
         fonts: [
           {
             family: `Open Sans`,
-            variants: [`300`, `400`,'800']
+            variants: [`300`, `400`, "800"],
           },
           {
             family: `Open Sans`,
-            subsets: [`latin`]
+            subsets: [`latin`],
           },
         ],
       },
     },
     `gatsby-plugin-styled-components`,
+    "reactstrap",
+    "google-map-react",
+    "jquery",
+    "availity-reactstrap-validation",
+    "react-autosuggest",
   ],
-};
+}

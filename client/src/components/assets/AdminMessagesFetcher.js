@@ -178,7 +178,7 @@ class InfoModal extends React.Component {
     )
   }
 }
-const firstMessageItem = data[0];
+const firstMessageItem = data[0]
 export default class AdminMessagesFetcher extends React.Component {
   constructor(props) {
     super(props)
@@ -190,7 +190,7 @@ export default class AdminMessagesFetcher extends React.Component {
 
   render() {
     if (data[0] === firstMessageItem) {
-      data.reverse();
+      data.reverse()
     }
     return data.map((dataInfo, index) => {
       const shortenedMsg = truncateString(dataInfo.textMessage, 25)

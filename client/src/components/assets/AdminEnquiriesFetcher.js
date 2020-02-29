@@ -9,7 +9,6 @@ const StyledTD = styled.td`
 `
 const StyledModal = styled(Modal)`
   box-shadow: 3px 3px 3px black;
-
 `
 const StyledModalHeader = styled.h1`
   background-color: #039ccc;
@@ -129,85 +128,112 @@ class EnquiriesModal extends React.Component {
         size="lg"
       >
         <StyledModalHeader text="center" toggle={this.toggle}>
-            {this.state.establishment}
+          {this.state.establishment}
         </StyledModalHeader>
         <StyledModalBody>
           <StyledModalBodyDiv>
             <Row>
               <Col xs="12" sm="12">
-                <StyledSubHeader><b>ID:</b> {this.state.hotelID}</StyledSubHeader>
+                <StyledSubHeader>
+                  <b>ID:</b> {this.state.hotelID}
+                </StyledSubHeader>
               </Col>
             </Row>
           </StyledModalBodyDiv>
           <StyledModalBodyDiv>
             <Row>
               <Col xs="12" sm="6">
-                <StyledModalText><b>DATE RECEIVED:</b><br/> {this.state.contactDate}</StyledModalText>
+                <StyledModalText>
+                  <b>DATE RECEIVED:</b>
+                  <br /> {this.state.contactDate}
+                </StyledModalText>
               </Col>
-                <Col xs="12" sm="6">
-                    <StyledModalText><b>TIME RECEIVED:</b><br/> {this.state.contactTime}</StyledModalText>
-                </Col>
+              <Col xs="12" sm="6">
+                <StyledModalText>
+                  <b>TIME RECEIVED:</b>
+                  <br /> {this.state.contactTime}
+                </StyledModalText>
+              </Col>
             </Row>
           </StyledModalBodyDiv>
           <StyledModalBodyDiv>
             <Row>
               <Col xs="12" sm="6">
-                  <StyledModalText><b>FROM DATE:</b><br/> {this.state.fromDate}</StyledModalText>
+                <StyledModalText>
+                  <b>FROM DATE:</b>
+                  <br /> {this.state.fromDate}
+                </StyledModalText>
               </Col>
-               <Col xs="12" sm="6">
-                <StyledModalText><b>TO DATE:</b><br/> {this.state.toDate}</StyledModalText>
+              <Col xs="12" sm="6">
+                <StyledModalText>
+                  <b>TO DATE:</b>
+                  <br /> {this.state.toDate}
+                </StyledModalText>
               </Col>
             </Row>
           </StyledModalBodyDiv>
-            <StyledModalBodyDiv>
-                <Row>
-                    <Col xs="12" sm="6">
-                        <StyledModalText><b>ADULTS:</b> {this.state.adultGuests}</StyledModalText>
-                    </Col>
-                    <Col xs="12" sm="6">
-                        <StyledModalText><b>CHILDREN:</b> {this.state.childGuests}</StyledModalText>
-                    </Col>
-                </Row>
-            </StyledModalBodyDiv>
           <StyledModalBodyDiv>
-              <Row>
-                  <Col xs="12" sm="12">
-                      <StyledModalText><b>NAME:</b> {this.state.firstName} {this.state.lastName}</StyledModalText>
-                  </Col>
-              </Row>
             <Row>
-              <Col xs="12" sm="12">
-                <StyledModalText><b>EMAIL:</b> {this.state.emailAddress}</StyledModalText>
+              <Col xs="12" sm="6">
+                <StyledModalText>
+                  <b>ADULTS:</b> {this.state.adultGuests}
+                </StyledModalText>
+              </Col>
+              <Col xs="12" sm="6">
+                <StyledModalText>
+                  <b>CHILDREN:</b> {this.state.childGuests}
+                </StyledModalText>
               </Col>
             </Row>
-            <Row>
-              <Col xs="12" sm="12">
-                <StyledModalText><b>ADDRESS:</b> {this.state.homeAddress}</StyledModalText>
-              </Col>
-            </Row>
-              <Row>
-                  <Col xs="12" sm="12">
-                      <StyledModalText><b>POST NR:</b> {this.state.postNumber}</StyledModalText>
-                  </Col>
-              </Row>
-            <Row>
-              <Col xs="12" sm="12">
-                <StyledModalText><b>PHONE NR:</b> {this.state.phoneNumber}</StyledModalText>
-              </Col>
-            </Row>
-
           </StyledModalBodyDiv>
           <StyledModalBodyDiv>
             <Row>
               <Col xs="12" sm="12">
-                <StyledSubHeader><b>Message:</b></StyledSubHeader>
+                <StyledModalText>
+                  <b>NAME:</b> {this.state.firstName} {this.state.lastName}
+                </StyledModalText>
               </Col>
             </Row>
             <Row>
               <Col xs="12" sm="12">
                 <StyledModalText>
-                    {this.state.textMessage}
+                  <b>EMAIL:</b> {this.state.emailAddress}
                 </StyledModalText>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="12" sm="12">
+                <StyledModalText>
+                  <b>ADDRESS:</b> {this.state.homeAddress}
+                </StyledModalText>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="12" sm="12">
+                <StyledModalText>
+                  <b>POST NR:</b> {this.state.postNumber}
+                </StyledModalText>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="12" sm="12">
+                <StyledModalText>
+                  <b>PHONE NR:</b> {this.state.phoneNumber}
+                </StyledModalText>
+              </Col>
+            </Row>
+          </StyledModalBodyDiv>
+          <StyledModalBodyDiv>
+            <Row>
+              <Col xs="12" sm="12">
+                <StyledSubHeader>
+                  <b>Message:</b>
+                </StyledSubHeader>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs="12" sm="12">
+                <StyledModalText>{this.state.textMessage}</StyledModalText>
               </Col>
             </Row>
           </StyledModalBodyDiv>
@@ -219,7 +245,7 @@ class EnquiriesModal extends React.Component {
     )
   }
 }
-const firstItem = data[0];
+const firstItem = data[0]
 export default class AdminEnquiriesFetcher extends React.Component {
   constructor(props) {
     super(props)
@@ -231,7 +257,7 @@ export default class AdminEnquiriesFetcher extends React.Component {
 
   render() {
     if (data[0] === firstItem) {
-      data.reverse();
+      data.reverse()
     }
     return data.map((dataInfo, index) => {
       return (

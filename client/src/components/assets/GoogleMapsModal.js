@@ -2,8 +2,6 @@ import React from "react"
 import GoogleMapReact from "google-map-react"
 import styled from "styled-components"
 import { Container, Modal, ModalFooter } from "reactstrap"
-import Image from "react-bootstrap/Image"
-const AnyReactComponent = ({ text }) => <div>{text}</div>
 
 const StyledContainer = styled.div``
 const StyledButton = styled.button`
@@ -59,7 +57,7 @@ const StyledModalFooter = styled(ModalFooter)`
   background-color: #039ccc;
   border-style: none;
 `
-const StyledImg = styled(Image)`
+const StyledImg = styled.img`
   height: 400px;
   width: 100%;
   margin-bottom: 10px;

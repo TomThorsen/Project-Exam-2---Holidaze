@@ -3,7 +3,6 @@ import styled from "styled-components"
 import Icon from "../img/icon_search.png"
 import data from "../../../public/establishments.json"
 import Autosuggest from "react-autosuggest"
-import $ from "jquery"
 import { navigate } from "gatsby"
 
 const StyledWrapper = styled.div`
@@ -95,9 +94,7 @@ const StyledPadder = styled.div`
   margin: 10px;
 `
 
-const hotelsData = $.map(data, function(value) {
-  return [value]
-})
+const hotelsData = data;
 
 const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase()

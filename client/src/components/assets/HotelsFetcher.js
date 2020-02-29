@@ -1,6 +1,5 @@
-import React from 'react';
+import React from "react"
 import styled from "styled-components"
-import Image from "react-bootstrap/Image"
 import data from "../../../public/establishments.json"
 import HotelsModal from "./HotelsModal"
 import HotelsMapModal from "./GoogleMapsModal"
@@ -19,7 +18,7 @@ const StyledHotelContainer = styled.div`
     align-items: center;
   }
 `
-const StyledImg = styled(Image)`
+const StyledImg = styled.img`
   height: 225px;
   width: 300px;
   margin: 20px;
@@ -95,7 +94,7 @@ const StyledHotelStarContainer = styled.div`
     margin-bottom: 10px;
   }
 `
-const StyledImgStars = styled(Image)`
+const StyledImgStars = styled.img`
   height: 22px;
   width: auto;
   margin: 0px;
@@ -139,23 +138,20 @@ const StyledOpenMapModalButton = styled(StyledOpenModalButton)`
   right: 150px;
 `
 export default class HotelsFetcher extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = {}
   }
   handleClick(selectedHotel) {
     this._modal.toggle(selectedHotel)
-    console.log(selectedHotel)
   }
   handleMapClick(selectedHotel) {
     this._mapModal.toggle(selectedHotel)
-    console.log(selectedHotel)
   }
   render() {
-    const hotelList = data;
+    const hotelList = data
     if (hotelList[0].id === "234234") {
-      hotelList.reverse();
+      hotelList.reverse()
     }
     return hotelList.map((selectedHotel, index) => {
       const starImage = [
@@ -166,7 +162,7 @@ export default class HotelsFetcher extends React.Component {
         [require("../img/4_Star.png")],
         [require("../img/5_Star.png")],
         [require("../img/6_Star.png")],
-      ];
+      ]
       return (
         <>
           <HotelsModal
@@ -175,25 +171,24 @@ export default class HotelsFetcher extends React.Component {
             }}
           />
           <HotelsMapModal
-              ref={HotelsMapModal => {
-                this._mapModal = HotelsMapModal
-              }}
+            ref={HotelsMapModal => {
+              this._mapModal = HotelsMapModal
+            }}
           />
           <StyledHotelContainer>
             <StyledImg
               src={selectedHotel.hotelImgUrl}
               alt="Image of a hotel"
               fluid
-              />
+            />
             <StyledHotelInfoContainer>
-              <StyledHotelHeader >{selectedHotel.hotelName}</StyledHotelHeader>
-              <StyledHotelLocation >${selectedHotel.price}</StyledHotelLocation>
-              <StyledHotelStarContainer >
+              <StyledHotelHeader>{selectedHotel.hotelName}</StyledHotelHeader>
+              <StyledHotelLocation>${selectedHotel.price}</StyledHotelLocation>
+              <StyledHotelStarContainer>
                 <StyledImgStars
                   src={starImage[selectedHotel.hotelStars]}
                   alt="Hotel Stars"
                   fluid
-
                 />
               </StyledHotelStarContainer>
               <StyledHotelParagraph>
@@ -203,7 +198,7 @@ export default class HotelsFetcher extends React.Component {
                 Self Catering: {selectedHotel.selfCatering}
               </StyledHotelRating>
               <StyledOpenMapModalButton
-                  onClick={this.handleMapClick.bind(this, selectedHotel)}
+                onClick={this.handleMapClick.bind(this, selectedHotel)}
               >
                 Map
               </StyledOpenMapModalButton>

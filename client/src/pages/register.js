@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout/Layout"
 import styled from "styled-components"
 import StyledSearch from "../components/assets/StyledSearch"
-import { Row, Col, FormGroup, Label } from "reactstrap"
+import { Row, Col, Label } from "reactstrap"
 import users from "../../public/users.json"
 
 import $ from "jquery"
@@ -119,7 +119,6 @@ export default class Register extends React.Component {
     let result = users.filter(obj => {
       return obj.username === values.username
     })
-    console.log(result)
     if (result.length !== 0) {
       $("#customFeedback").html("Username is taken")
       $("#username").css("border-color", "red")

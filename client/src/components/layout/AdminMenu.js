@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Row, Col } from "reactstrap"
 import { Link } from "gatsby"
 
 const StyledDiv = styled.div`
@@ -47,21 +46,20 @@ const StyledLink = styled(Link)`
   }
 `
 const StyledRow = styled.div`
-width: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
-flex-wrap: nowrap;
+  flex-wrap: nowrap;
 `
 const StyledLinkDiv = styled.div`
-width: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
 `
 export default () => (
   <>
     <StyledDiv>
-
-          <StyledHeader>Admin Menu</StyledHeader>
+      <StyledHeader>Admin Menu</StyledHeader>
 
       <StyledRow>
         <StyledLinkDiv>
@@ -69,20 +67,15 @@ export default () => (
             Customer Enquiries
           </StyledLink>
 
-
           <StyledLink to="/admin_messages/" activeStyle={{ color: "#FEC406" }}>
             Contact Messages
           </StyledLink>
-
 
           <StyledLink to="/admin_create/" activeStyle={{ color: "#FEC406" }}>
             Create
           </StyledLink>
 
-          <StyledLink
-            to="/"
-            activeStyle={{ color: "#FEC406" }}
-          >
+          <StyledLink to="/" activeStyle={{ color: "#FEC406" }}>
             Log Out
           </StyledLink>
         </StyledLinkDiv>

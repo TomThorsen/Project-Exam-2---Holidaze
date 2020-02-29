@@ -20,16 +20,16 @@ const StyledDiv = styled.div`
   }
   padding-bottom: 0px;
   padding-top: 0px;
-`;
+`
 const StyledTable = styled(Table)`
   color: white;
   text-align: center;
   margin-bottom: 0;
-`;
+`
 const StyledTH = styled.th`
   padding-bottom: 0px !important;
   padding-top: 5px !important;
-`;
+`
 
 const AdminEnquiryModal = () => {
   return (
@@ -49,13 +49,13 @@ const AdminEnquiryModal = () => {
               </tr>
             </thead>
             <tbody id="tableBody">
-              <AdminMessagesFetcher/>
+              <AdminMessagesFetcher />
             </tbody>
           </StyledTable>
         </StyledDiv>
       </Layout>
     </>
   )
-};
+}
 
 export default AdminEnquiryModal
